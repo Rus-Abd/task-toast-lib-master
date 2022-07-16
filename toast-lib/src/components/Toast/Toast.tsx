@@ -1,15 +1,9 @@
 import React from 'react';
+import { ItoastOptions } from '../../types';
 
 import './toast.css';
 
-interface Iprops {
-  type: 'info' | 'warning' | 'error' | 'success';
-  text?: string;
-  duration?: number;
-  margin?: string;
-}
-
-const Toast = ({ type, margin, text }: Iprops) => {
+const Toast = ({ type, margin, text }: ItoastOptions) => {
   return (
     <div className={`toast type--${type}`} style={{ margin: margin }}>
       <button className="close-icon"></button>
