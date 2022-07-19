@@ -30,43 +30,43 @@ type toastProps = {
 };
 
 export const ToastEl = styled.div`
-  width: 668px;
-  height: 181px;
-  border-radius: 24px;
-  position: relative;
-  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.16);
   background-color: ${(props: toastProps) =>
     toastType[props.type]['background']};
+  border-radius: 24px;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.16);
+  height: 181px;
+  position: relative;
+  width: 668px;
 `;
 
 export const ToastIcon = styled.span`
-  position: absolute;
-  width: 64px;
-  height: 64px;
-  top: 59px;
-  left: 32px;
   background-image: url(${(props: toastProps) => toastType[props.type]['src']});
+  height: 64px;
+  left: 32px;
+  position: absolute;
+  top: 59px;
+  width: 64px;
 `;
 
 export const CloseIcon = styled.button`
-  position: absolute;
-  top: 24px;
-  right: 24px;
-  width: 32px;
-  height: 32px;
   background: none;
   background-image: url(${closeSvg});
   border: none;
-  padding: 0;
   cursor: pointer;
+  height: 32px;
+  padding: 0;
+  position: absolute;
+  right: 24px;
+  top: 24px;
+  width: 32px;
 `;
 
 export const ToastText = styled.p`
+  color: #ffffff;
   font-family: HelveticaNue;
+  font-size: 32px;
+  left: 135px;
+  line-height: 37px;
   position: absolute;
   top: 73px;
-  left: 135px;
-  font-size: 32px;
-  line-height: 37px;
-  color: #ffffff;
 `;

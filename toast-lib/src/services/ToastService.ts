@@ -2,17 +2,20 @@ import { v4 as uuidv4 } from 'uuid';
 import { ItoastOptions } from '../types';
 
 export default class ToastService {
+  toasts: ItoastOptions[];
+  position: string;
   constructor() {
     this.toasts = [];
+    this.position = 'topLeft';
   }
 
   getAllToasts = () => {
     return this.toasts;
   };
 
-  addToast = (toast) => {
+  addToast = (toast: ItoastOptions) => {
     if (this.toasts.length < 3) {
-      this.toasts.push(toast);
+      this.toasts.push({ ...toast, id: uuidv4() });
     } else {
       return;
     }
@@ -22,10 +25,7 @@ export default class ToastService {
     this.toasts = this.toasts.filter((toast) => toast.id !== toastId);
   };
 
-  generateToast = (toastOptions: ItoastOptions) => {
-    return {
-      id: uuidv4(),
-      ...toastOptions,
-    };
+  setPosition = (pos: string) => {
+    this.position = pos;
   };
 }
