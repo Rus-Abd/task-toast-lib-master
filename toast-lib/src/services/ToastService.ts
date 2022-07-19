@@ -1,7 +1,7 @@
 import { v4 as uuidv4 } from 'uuid';
 import { ItoastOptions } from '../types';
 
-export default class ToastService {
+class ToastService {
   toasts: ItoastOptions[];
   position: string;
   constructor() {
@@ -29,3 +29,5 @@ export default class ToastService {
     this.position = pos;
   };
 }
+
+export const toastService = new ToastService();

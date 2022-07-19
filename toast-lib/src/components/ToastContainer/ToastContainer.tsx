@@ -5,7 +5,7 @@ import { ItoastOptions, Tposition } from '../../types';
 import ReactDOM from 'react-dom';
 import Toast from '../Toast/Toast';
 
-const ToastContainer = ({
+export const ToastContainer = ({
   position,
   toasts,
 }: {
@@ -23,7 +23,5 @@ const ToastContainer = ({
     document.body
   );
 };
-
-export default ToastContainer;
 
 ToastContainer.displayName = `ToastContainer`;
