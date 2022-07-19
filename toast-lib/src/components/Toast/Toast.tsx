@@ -1,15 +1,17 @@
 import React from 'react';
-import { ItoastOptions } from '../../types';
 
-import './toast.css';
+import { ItoastOptions } from '../../types';
+import { ToastEl, ToastIcon, CloseIcon, ToastText } from './styled';
 
 const Toast = ({ type, margin, text }: ItoastOptions) => {
   return (
-    <div className={`toast type--${type}`} style={{ margin: margin }}>
-      <button className="close-icon"></button>
-      <span className={`${type}-icon icon`}></span>
-      <p>{text}</p>
-    </div>
+    <>
+      <ToastEl type={type} style={{ margin: margin }}>
+        <CloseIcon></CloseIcon>
+        <ToastIcon type={type}></ToastIcon>
+        <ToastText>{text}</ToastText>
+      </ToastEl>
+    </>
   );
 };
 
